@@ -1,0 +1,26 @@
+{
+  "name": "noble-gambit",
+  "version": "1.0.0",
+  "description": "chess game ",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Will-Wrightwa/nobleGambit.js.git"
+  },
+  "keywords": [
+    "chess"
+  ],
+  "author": "Will Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Will-Wrightwa/nobleGambit.js/issues"
+  },
+  "homepage": "https://github.com/Will-Wrightwa/nobleGambit.js#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
