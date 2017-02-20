@@ -3,7 +3,7 @@
 class Tile {
   constructor(color) {
     this.color = color
-    this.piece = 1
+    this.piece = null
   }
   setPiece(piece){
     this.piece = piece

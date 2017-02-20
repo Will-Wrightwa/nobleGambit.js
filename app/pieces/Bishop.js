@@ -2,10 +2,11 @@
 const Piece = require('./Piece.js')
 
 class Bishop extends Piece{
-  constructor() {
-    super()
+  constructor(location,player,board) {
+    super(location,player,board)
   }
+
 }
-Bishop.prototype.name="bishop"
+
 
 module.exports = Bishop

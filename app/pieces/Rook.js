@@ -2,10 +2,14 @@
 const Piece = require('./Piece.js')
 
 class Rook extends Piece{
-  constructor() {
-    super()
+  constructor(location,player,board) {
+    super(location,player,board)
   }
+
 }
-Rook.prototype.name="rook"
+
+
+
+
 
 module.exports = Rook

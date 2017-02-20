@@ -4,6 +4,12 @@ const expect = chai.expect;
 
 const Tile = require('../app/Tile.js')
 const Board = require('../app/Board.js')
+const Pawn = require('../app/pieces/Pawn.js')
+const Rook = require('../app/pieces/Rook.js')
+const Knight = require('../app/pieces/Knight.js')
+const Bishop = require('../app/pieces/Bishop.js')
+const King = require('../app/pieces/King.js')
+const Queen = require('../app/pieces/Queen.js')
 
 describe('Board class', function() {
   it('should inherit from Array', function() {
@@ -35,6 +41,23 @@ describe('Board class', function() {
     expect("init" in b).to.be.true
     expect(typeof b.init).to.equal("function")
     b.init()
+  });
+});
+describe('Board.init() method', function() {
+  it('should correctly populate row 1', function() {
+    let b = new Board()
+    b.init({},{})
+    let name = (tile)=>tile.piece.constructor.name
+    let r1 = b[0]
+    expect(name(r1[0])).to.equal("Rook")
+    expect(name(r1[1])).to.equal("Knight")
+    expect(name(r1[2])).to.equal("Bishop")
+    expect(name(r1[3])).to.equal("Queen")
+    expect(name(r1[4])).to.equal("King")
+    expect(name(r1[5])).to.equal("Bishop")
+    expect(name(r1[6])).to.equal("Knight")
+    expect(name(r1[7])).to.equal("Rook")
+
   });
 });
 

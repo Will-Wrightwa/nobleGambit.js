@@ -2,10 +2,9 @@
 const Piece = require('./Piece.js')
 
 class King extends Piece{
-  constructor() {
-    super()
+  constructor(location,player,board) {
+    super(location,player,board)
   }
 }
-King.prototype.name="king"
 
 module.exports = King
