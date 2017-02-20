@@ -26,14 +26,14 @@ describe('Board class', function() {
   });
   it('should contains only Tiles', function() {
     let b = new Board()
-    each2d(b,tile=>expect( tile instanceof Tile).to.be.true)
+    b.each2d(tile=>expect( tile instanceof Tile).to.be.true)
   });
   it('should have alternating colors', function() {
     let b = new Board()
     let color1 = b[0][1].color
     let color2 = b[0][0].color
     expect(color1).to.not.equal(color2)
-    let colors = map2d(b,tile=>tile.color)
+    let colors = b.map2d(tile=>tile.color)
     // figure out how to test alternating colors
   });
   it('should have .init() method', function() {
@@ -59,17 +59,48 @@ describe('Board.init() method', function() {
     expect(name(r1[7])).to.equal("Rook")
 
   });
+  it('should correctly populate row 2', function() {
+    let b = new Board()
+    b.init({},{})
+    let name = (tile)=>tile.piece.constructor.name
+    let r2 = b[1]
+    r2.every((tile)=>{
+      expect(name(tile)).to.equal("Pawn")
+    })
+  });
+  it('should correctly populate row 3 thru 6', function() {
+    let b = new Board()
+    b.init({},{})
+    for (var i = 2; i < 6; i++) {
+      row = b[i]
+      row.every((tile)=>{
+        return expect(tile.piece === null).to.be.true
+      })
+    }
+
+  });
+  it('should correctly populate row 7', function() {
+    let b = new Board()
+    b.init({},{})
+    let name = (tile)=>tile.piece.constructor.name
+    let r2 = b[6]
+    r2.every((tile)=>{
+      expect(name(tile)).to.equal("Pawn")
+    })
+  });
+  it('should correctly populate row 1', function() {
+    let b = new Board()
+    b.init({},{})
+    let name = (tile)=>tile.piece.constructor.name
+    let r1 = b[7]
+    expect(name(r1[0])).to.equal("Rook")
+    expect(name(r1[1])).to.equal("Knight")
+    expect(name(r1[2])).to.equal("Bishop")
+    expect(name(r1[3])).to.equal("King")
+    expect(name(r1[4])).to.equal("Queen")
+    expect(name(r1[5])).to.equal("Bishop")
+    expect(name(r1[6])).to.equal("Knight")
+    expect(name(r1[7])).to.equal("Rook")
+
+  });
 });
-
-
-
-function each2d(board,fn){
-  board.forEach((row)=>{
-    row.forEach((tile)=>fn(tile))
-  })
-}
-function map2d(board,fn){
-  return board.map((row)=>{
-    return row.map(fn)
-  })
-}
