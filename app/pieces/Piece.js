@@ -1,8 +1,9 @@
 
 class Piece {
-  constructor(location,color) {
+  constructor(location,player,board) {
     this.location = location
-    this.color = color
+    this.player = player
+    this.board = board
   }
 }
 

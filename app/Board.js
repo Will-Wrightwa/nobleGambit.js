@@ -1,4 +1,12 @@
 const Tile = require('./Tile.js')
+const Pawn = require('./pieces/Pawn.js')
+const Rook = require('./pieces/Rook.js')
+const Knight = require('./pieces/Knight.js')
+const Bishop = require('./pieces/Bishop.js')
+const King = require('./pieces/King.js')
+const Queen = require('./pieces/Queen.js')
+
+
 
 class Board extends Array {
   constructor() {
@@ -17,6 +25,10 @@ class Board extends Array {
     }
   }
   init(){
+    // let r0 = [Rook,Knight,Bishop,Queen,King,Bishop,Knight,Rook]
+    // let r1 = [Pawn,Pawn,Pawn,Pawn,Pawn,Pawn,Pawn,Pawn]
+    // let r6 = [Rook,Knight,Bishop,King,Queen,Bishop,Knight,Rook]
+
 
   }
 }
