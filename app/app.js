@@ -8,33 +8,11 @@ let p2 = new Player("joe","black")
 
 b.init(p1,p2)
 
-/*
+
 console.log(b.renderer.render("ltrs"));
 
 
 b[1][0].piece.moveTo([2,0])
 console.log(b.renderer.render("ltrs"));
-*/
+
 console.log(b._("A1"));
-// uni = cliRenderer.unicode(b)
-// console.log(uni);
-// console.log(b[1][0]);
-// console.log(b[2][0]);
-
-// console.log(tile.piece);
-
-
-
-
-
-
-// function each2d(board,fn){
-//   board.forEach((row)=>{
-//     row.forEach((tile)=>fn(tile))
-//   })
-// }
-// function map2d(board,fn){
-//   return board.map((row)=>{
-//     return row.map(fn)
-//   })
-// }
