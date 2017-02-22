@@ -6,12 +6,14 @@ const Bishop = require('./pieces/Bishop.js')
 const King = require('./pieces/King.js')
 const Queen = require('./pieces/Queen.js')
 
+const Renderer = require('./renderers/cliRenderer2.js')
 
 
 class Board extends Array {
   constructor() {
     super()
     let color;
+    this.renderer = new Renderer(this)
     for (var col = 0; col < 8; col++) {
       this[col]=[]
       for (var row = 0; row < 8; row++) {
@@ -62,6 +64,33 @@ class Board extends Array {
     return this.map((row)=>{
       return row.map(fn)
     })
+  }
+  $(location){
+    return this._(location).piece
+  }
+  _(location){
+    if(!location)return null;
+    if (typeof location === "string"){
+      const charMap ={
+        a:0,
+        b:1,
+        c:2,
+        d:3,
+        e:4,
+        f:5,
+        g:6,
+        h:7
+      }
+
+      let row = charMap[location.charAt(0).toLowerCase()]
+      let col = parseInt(location.charAt(1))-1
+      if(!(row+1) || !(col+1))return null;
+      location = [row,col]
+    }
+    if (location[0] > 7 || location[1] > 7 ||location[0] < 0 ||location[1] < 0){
+      return null;
+    }
+    return this[location[0]][location[1]]
   }
 }
 

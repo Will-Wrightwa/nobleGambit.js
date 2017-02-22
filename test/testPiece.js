@@ -20,4 +20,16 @@ describe('Piece class', function() {
     let p = new Piece([0,0],"player",board)
     expect(p.board).to.equal(board)
   });
+  it('should have .moveTo() method', function() {
+    let board = [[],[{piece:null}]]
+    let p = new Piece([0,0],"player",board)
+    expect(typeof p.moveTo ).to.equal("function")
+  });
+  it('.moveTo() should change piece.location', function() {
+    // let board = [[],[]]
+    // let to = [0,1]
+    // let p = new Piece([0,0],"player",board)
+    // p.moveTo(to)
+    // expect(p.location).to.equal("foo")
+  });
 });

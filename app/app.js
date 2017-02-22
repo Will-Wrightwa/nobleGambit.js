@@ -3,16 +3,24 @@ const Board = require('./Board.js')
 const Player = require('./Player.js')
 const cliRenderer = require('./renderers/cliRenderer')
 let b = new Board()
-let p1 = new Player("fred")
+let p1 = new Player("fred","white")
 let p2 = new Player("joe","black")
 
 b.init(p1,p2)
 
-let tile = b[0][4]
+/*
+console.log(b.renderer.render("ltrs"));
 
-let uni = cliRenderer.unicode(b)
 
-console.log(uni);
+b[1][0].piece.moveTo([2,0])
+console.log(b.renderer.render("ltrs"));
+*/
+console.log(b._("A1"));
+// uni = cliRenderer.unicode(b)
+// console.log(uni);
+// console.log(b[1][0]);
+// console.log(b[2][0]);
+
 // console.log(tile.piece);
 
 
@@ -20,13 +28,13 @@ console.log(uni);
 
 
 
-function each2d(board,fn){
-  board.forEach((row)=>{
-    row.forEach((tile)=>fn(tile))
-  })
-}
-function map2d(board,fn){
-  return board.map((row)=>{
-    return row.map(fn)
-  })
-}
+// function each2d(board,fn){
+//   board.forEach((row)=>{
+//     row.forEach((tile)=>fn(tile))
+//   })
+// }
+// function map2d(board,fn){
+//   return board.map((row)=>{
+//     return row.map(fn)
+//   })
+// }

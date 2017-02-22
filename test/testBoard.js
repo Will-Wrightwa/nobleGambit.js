@@ -103,4 +103,31 @@ describe('Board.init() method', function() {
     expect(name(r1[7])).to.equal("Rook")
 
   });
+  it('Board.$() should select the correct piece', function() {
+    let b = new Board()
+    b.init({},{})
+    let selected = b.$([0,0])
+    expect(selected).to.equal(b[0][0].piece)
+  });
+  it('Board.$( ) should work with algabraic chess notation ', function() {
+    let b = new Board()
+    b.init({},{})
+    let selected = b.$("A1")
+    expect(selected).to.equal(b[0][0].piece)
+  });
+
+  it('.$() should work by reference', function() {
+      let b = new Board()
+      b.init({},{})
+      expect(b.$("a2")).to.not.equal(b.$("b2"))
+  });
+
+  // it('.$() should return null for invalid locations', function() {
+  //   let b = new Board()
+  //   b.init({},{})
+  //
+  //   ["a9","bb","foobar", "J1","A0","11","22"].forEach((loc)=>{
+  //     expect(b.$(loc)).to.equal(null)
+  //   })
+  // });
 });

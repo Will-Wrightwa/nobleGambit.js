@@ -8,6 +8,9 @@ class Tile {
   setPiece(piece){
     this.piece = piece
   }
+  clear(){
+    this.piece = null
+  }
 }
 
 
