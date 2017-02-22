@@ -82,8 +82,8 @@ class Board extends Array {
         h:7
       }
 
-      let row = charMap[location.charAt(0).toLowerCase()]
-      let col = parseInt(location.charAt(1))-1
+      let col = charMap[location.charAt(0).toLowerCase()]
+      let row = parseInt(location.charAt(1))-1
       if(!(row+1) || !(col+1))return null;
       location = [row,col]
     }
