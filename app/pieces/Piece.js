@@ -17,6 +17,10 @@ class Piece {
     if(location[1] < 0 || location[1] > 7)return false;
     return true;
   }
+  type(){
+    return this.player.color + " "+ this.constructor.name
+  }
+
 
 }
 

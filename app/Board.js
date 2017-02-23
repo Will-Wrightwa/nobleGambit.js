@@ -66,7 +66,9 @@ class Board extends Array {
     })
   }
   $(location){
-    return this._(location).piece
+    let t = this._(location)
+    if(!t)return null;
+    return t.piece
   }
   _(location){
     if(!location)return null;
@@ -90,8 +92,10 @@ class Board extends Array {
     if (location[0] > 7 || location[1] > 7 ||location[0] < 0 ||location[1] < 0){
       return null;
     }
+    if (location.some((n)=>isNaN(parseFloat(n)))) return null;
     return this[location[0]][location[1]]
   }
+
 }
 
 module.exports = Board

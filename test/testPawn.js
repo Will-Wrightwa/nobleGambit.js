@@ -10,4 +10,9 @@ describe('Pawn class', function() {
     let p = new Pawn()
     expect(p instanceof Piece )
   });
+
 });
+
+
+
+//r1 col0
